@@ -15,11 +15,10 @@ img{
 
 #inicio{
     border: 1px solid green;
-    width: 50%;
+    
 }
 
 #fin{
     border: 1px solid red;
-    width: 50%;
-    margin-left: 50%;
+
 }
