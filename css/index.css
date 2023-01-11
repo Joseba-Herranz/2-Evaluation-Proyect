@@ -1,0 +1,25 @@
+body{
+    
+}
+
+img{
+    width: 20%;
+    border: 1px solid black;
+}
+
+#cabecera{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
+#inicio{
+    border: 1px solid green;
+    width: 50%;
+}
+
+#fin{
+    border: 1px solid red;
+    width: 50%;
+    margin-left: 50%;
+}
