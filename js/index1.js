@@ -1,32 +1,28 @@
-var img = new Image();
-    img.id = "Caballo"
-    img.src = "Caballo.png";
-    $(document).ready(function () {
-                $('#pos44').append(img);
-                $('.dCasb,.dCasn').attr('draggable', true);
-                $(".dCasb,.dCasn").on("dragstart", function (event) {
-                    console.log(this.id);
-                    event.originalEvent.dataTransfer.setData('text', this.id);
-                });
+$(function () {
+    var $inicio = $("#inicio"), $fin = $("#fin");
+    var info ="";
+    $("img", $inicio).draggable({
+        cancel: "a.ui-icon",
+        rever: "invalid",
+        containment: "document",
+        helper:"clone",
+        cursorAt: { bottom: 0 },
+        drag: function(){
+            info = [ui.draggable];
+            console.log(info);
+        }
+    }); 
+    
+    $fin.droppable({
+        accept: "#inicio > img",
+        classes: {
+            "ui-droppable-active": "ui-state-highlight"
+        },
+        drop: function(event, ui){
+            guardar(ui.draggable);
+        }
+    })
+});
+https://stackoverflow.com/questions/27263460/using-jquery-to-drag-and-drop-get-value-from-dropped-div
 
-                $(".dCasb,.dCasn").on("dragover", function (event) {
-                    event.preventDefault();
-                });
-
-                $(".dCasb,.dCasn").on("dragenter", function (event) {
-                    event.preventDefault();
-                });
-
-                $(".dCasb,.dCasn").on("dragleave", function (event) {
-                    event.preventDefault();
-                });
-
-                $(".dCasb,.dCasn").on("drop", function (event) {
-                    sOriginal = event.originalEvent.dataTransfer.getData('text');
-                    sDestino = this.id;
-                    console.log(sOriginal);
-                    console.log(this.id);
-                    localizacion(sOriginal, sDestino);
-                    $('#Caballo').appendTo(this);
-                });
-            });
+https://jqueryui.com/draggable/#events

@@ -1,10 +1,10 @@
 body{
-    
+    background-color: #b8a88a;
 }
 
 img{
     width: 20%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 #cabecera{
