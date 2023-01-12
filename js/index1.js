@@ -7,7 +7,7 @@ $(function () {
         containment: "document",
         helper:"clone",
         cursorAt: { bottom: 0 },
-        drag: function(){
+        drag: function(event, ui){
             info = [ui.draggable];
             console.log(info);
         }
@@ -23,6 +23,6 @@ $(function () {
         }
     })
 });
-https://stackoverflow.com/questions/27263460/using-jquery-to-drag-and-drop-get-value-from-dropped-div
+// https://stackoverflow.com/questions/27263460/using-jquery-to-drag-and-drop-get-value-from-dropped-div
 
-https://jqueryui.com/draggable/#events
+// https://jqueryui.com/draggable/#events
