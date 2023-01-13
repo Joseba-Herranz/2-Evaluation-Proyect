@@ -2,9 +2,8 @@ body{
     background-color: #b8a88a;
 }
 
-img{
+#ibex35{
     width: 20%;
-    /* border: 1px solid black; */
 }
 
 #cabecera{
@@ -14,11 +13,31 @@ img{
 }
 
 #inicio{
-    border: 1px solid green;
-    
+    border: 5px solid #ccc;
+    padding: 5px;
+    min-height: 100px;
+    width: 430px;
 }
 
 #fin{
-    border: 1px solid red;
+    border: 5px solid #ccc;
+    padding: 5px;
+    min-height: 100px;
+    width: 430px;
+}
 
+img
+{
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+}
+.draggable
+{
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+.dropped
+{
+    position: static !important;
 }
