@@ -1,12 +1,12 @@
-var vInicio = new Array;
-var vFin = new Array;
+// var vInicio = new Array;
+// var vFin = new Array;
 
-//0 significa visible y 1 invisible
+// //0 significa visible y 1 invisible
 
-for(let x = 0; x < 10; x++){
-    vInicio [x] = 0;
-    vFin [x] = 1;
-}
+// for(let x = 0; x < 10; x++){
+//     vInicio [x] = 0;
+//     vFin [x] = 1;
+// }
 
 $(function () {
     // var inicio = $("#inicio");
