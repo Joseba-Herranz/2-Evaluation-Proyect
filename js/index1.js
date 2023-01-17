@@ -78,17 +78,46 @@ function guardado(){
     
 }
 function grafico(){
-    const labels = Utils.months({count: 7});
-    const data = {
-    labels: labels,
-    datasets: [{
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-    }]
-    };
+    // const labels = Utils.months({count: 7});
+    // const data = {
+    // labels: labels,
+    // datasets: [{
+    //     label: 'My First Dataset',
+    //     data: [65, 59, 80, 81, 56, 55, 40],
+    //     fill: false,
+    //     borderColor: 'rgb(75, 192, 192)',
+    //     tension: 0.1
+    // }]
+    // };
+
+//     var ctx = document.getElementById('myChart').getContext('2d');
+// var chart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         data: {
+//     labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+//     datasets: [{
+//         label: 'Ventas',
+//         data: [12, 19, 3, 5],
+//         backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//     }]
+// },
+
+//     },
+//     options: {
+//     scales: {
+//         y: {
+//             beginAtZero: true
+//         }
+//     },
+//     title: {
+//         display: true,
+//         text: 'Ventas mensuales'
+//     }
+// }
+
+// });
+
 }
 // https://stackoverflow.com/questions/27263460/using-jquery-to-drag-and-drop-get-value-from-dropped-div
 
