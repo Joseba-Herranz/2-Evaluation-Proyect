@@ -41,7 +41,7 @@ $(function () {
             if ($("#fin img").length == 0) {
                 $("#fin").html("");
             }
-            console.log(ui.draggable.attr('id'));
+            // console.log(ui.draggable.attr('id'));
             ui.draggable.addClass("dropped");
             $("#fin").append(ui.draggable);
             
@@ -168,8 +168,5 @@ function grafico(){
 
 
 function eleccion(){
-    
-}
-// https://stackoverflow.com/questions/27263460/using-jquery-to-drag-and-drop-get-value-from-dropped-div
 
-// https://jqueryui.com/draggable/#events
+}
