@@ -35,7 +35,9 @@ $(function () {
             // }
         }
     });
+
     var x=0;
+
     $("#fin").droppable({
         drop: function (event, ui) {
             if ($("#fin img").length == 0) {
@@ -48,7 +50,6 @@ $(function () {
             guardados[x] = ui.draggable.attr('id');
             imagesId.push(ui.draggable.attr('id'));
 
-            
             localStorage.setItem("imagesId", JSON.stringify(imagesId));
 
             x++;
@@ -72,20 +73,17 @@ function borrar(){
 
 function guardado(){
     console.log(guardados);
+    const mostrar = document.getElementById('mostrar');
+    var toShow = "<button>Seleccionar otra vez</button>" + "<br>";
+    
     
     for(let x=0; x<guardados.length; x++){
-        document.write(`<style>img
-        { height: 100px;
-          width: 100px;
-          margin: 2px;
-        } </style>`);
 
-        document.write(show[guardados[x]]);
-        document.write('<canvas id="myChart"></canvas>');
-        document.write("<br>");
+        toShow += show[guardados[x]] + "<p>Valor actual</p>" + "</br>" ;
+        // toShow += '<canvas id="myChart"></canvas>';
 
     }
-    
+    mostrar.innerHTML = toShow;
 }
 function grafico(){
         var ctx = document.getElementById("myChart").getContext("2d");
