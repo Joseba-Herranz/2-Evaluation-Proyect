@@ -51,8 +51,8 @@ $(function () {
             imagesId.push(ui.draggable.attr('id'));
 
             localStorage.setItem("imagesId", JSON.stringify(imagesId));
-
             x++;
+            guardado();
         }
     });
 
@@ -74,17 +74,48 @@ function borrar(){
 function guardado(){
     console.log(guardados);
     const mostrar = document.getElementById('mostrar');
-    var toShow = "<button>Seleccionar otra vez</button>" + "<br>";
-    
+    var toShow = "<style>#mostrar.img{ width: 200%;} </style>"
+    toShow += "<button>Seleccionar otra vez</button>" + "<br>" + `<table>`;
     
     for(let x=0; x<guardados.length; x++){
-
-        toShow += show[guardados[x]] + "<p>Valor actual</p>" + "</br>" ;
-        // toShow += '<canvas id="myChart"></canvas>';
-
+        
+        if((x%2)==0){
+            toShow += "<tr>";
+            toShow += `<td>` + show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>` + `</td>` ;
+            // toShow += '<canvas id="myChart"></canvas>';
+        }else{
+            toShow += `<td>` + show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>` + `</td>` ;
+            toShow += "</tr>";
+        }
+        
     }
+
+    toShow += `</table>`
     mostrar.innerHTML = toShow;
+    // getValor();
+    var intervalID = setInterval(getValor, 500);
 }
+
+function getValor(){
+    const options = {method: 'GET'};
+
+    fetch('https://projectdb.joseba-andonia1.repl.co/bolsa', options)
+    .then(response => response.json())
+    .then(response => { response.forEach(element => {
+
+            const van = document.getElementById(`valor${element.id}`);
+            if(van != null){
+                // console.log(`valor${element.id}`);
+                van.innerHTML = `<strong>${element.valor}</strong>`;
+            }
+            });
+    })
+    .catch(err => console.error(err));
+    
+}
+
+
+
 function grafico(){
         var ctx = document.getElementById("myChart").getContext("2d");
         var myChart = new Chart(ctx, {
@@ -166,5 +197,5 @@ function grafico(){
 
 
 function eleccion(){
-
+    alert("hola");
 }
