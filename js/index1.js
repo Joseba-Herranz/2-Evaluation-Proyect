@@ -75,22 +75,21 @@ function guardado(){
     console.log(guardados);
     const mostrar = document.getElementById('mostrar');
     var toShow = "<style>#mostrar.img{ width: 200%;} </style>"
-    toShow += "<button>Seleccionar otra vez</button>" + "<br>" + `<table>`;
+    toShow += "<button>Seleccionar otra vez</button>" + "<br>";
     
     for(let x=0; x<guardados.length; x++){
-        
+        toShow += `<div id='div${guardados[x]}'>`;
         if((x%2)==0){
-            toShow += "<tr>";
-            toShow += `<td>` + show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>` + `</td>` ;
+            toShow += `<div id='div${guardados[x]}'>`;
+            toShow += show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>`;
             // toShow += '<canvas id="myChart"></canvas>';
         }else{
-            toShow += `<td>` + show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>` + `</td>` ;
-            toShow += "</tr>";
+            toShow += show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>`;
+            
         }
-        
+        toShow += `</div>`;
     }
 
-    toShow += `</table>`
     mostrar.innerHTML = toShow;
     // getValor();
     var intervalID = setInterval(getValor, 500);
