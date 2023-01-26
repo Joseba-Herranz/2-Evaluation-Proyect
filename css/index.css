@@ -17,6 +17,7 @@ body{
     padding: 5px;
     min-height: 100px;
     width: 700px;
+    margin: auto;
     
 }
 
@@ -25,12 +26,24 @@ body{
     padding: 5px;
     min-height: 100px;
     width: 700px;
+    margin: auto;
 }
 
-/* #mostrar{
+#mostrar{
+    margin: auto;
+    width: 1000px;
+}
 
-} */
+h2{
+    margin: auto;
+    width: 700px;
+}
 
+#borrar{
+    margin-left: auto;
+    margin-right: auto;
+}
+.element { float: left; } .element:nth-child(2n) { clear: both; }
 img
 {
     height: 100px;
